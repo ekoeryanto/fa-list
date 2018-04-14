@@ -10,6 +10,7 @@ const list = Object.keys(icons).map(name => {
 const styles = ['solid', 'brands', 'regular'];
 
 styles.forEach(s => {
+  console.log(`Creating ${s} icon style...`);
   let icons = list.filter(f => f.styles.includes(s));
 
   icons = icons.map(i => i.name);

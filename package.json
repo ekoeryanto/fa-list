@@ -5,11 +5,12 @@
   "main": "lib/fa-list.min.js",
   "scripts": {
     "prepublish": "npm run build",
-    "build": "webpack --env dev && webpack --env build && npm run test",
+    "build": "webpack --env dev && webpack --env build && npm test",
     "dev": "webpack --progress --colors --watch --env dev",
     "test": "mocha --require babel-core/register --colors ./test/*.spec.js",
     "test:watch": "mocha --require babel-core/register --colors -w ./test/*.spec.js",
-    "release": "standard-version -r patch && git push --follow-tags && npm publish"
+    "release": "standard-version -r patch && git push --follow-tags && npm publish",
+    "postinstall": "node ./fetch && node ./create && npm run build"
   },
   "repository": {
     "type": "git",
