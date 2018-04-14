@@ -5,7 +5,7 @@
   "main": "lib/fa-list.min.js",
   "scripts": {
     "prepublish": "npm run build",
-    "build": "webpack --env dev && webpack --env build && npm test",
+    "build": "webpack --env dev && webpack --env build",
     "dev": "webpack --progress --colors --watch --env dev",
     "test": "mocha --require babel-core/register --colors ./test/*.spec.js",
     "test:watch": "mocha --require babel-core/register --colors -w ./test/*.spec.js",
