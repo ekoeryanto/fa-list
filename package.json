@@ -9,7 +9,7 @@
     "dev": "webpack --progress --colors --watch --env dev",
     "test": "mocha --require babel-core/register --colors ./test/*.spec.js",
     "test:watch": "mocha --require babel-core/register --colors -w ./test/*.spec.js",
-    "release": "standard-version -r patch && npm publish"
+    "release": "standard-version -r patch && git push --follow-tags && npm publish"
   },
   "repository": {
     "type": "git",
