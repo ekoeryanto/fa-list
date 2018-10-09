@@ -1,4 +1,7 @@
-# Font Awesome Icon List
+
+# Font Awesome Icon List 
+
+[![Build Status](https://travis-ci.org/ekoeryanto/fa-list.svg?branch=master)](https://travis-ci.org/ekoeryanto/fa-list)
 
 A list of regular, solid, and brands of fontawesome
 
