@@ -2,15 +2,19 @@
   "name": "fa-list",
   "version": "1.0.2",
   "description": "List of fontawesome icons",
-  "main": "lib/fa-list.min.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "browser": "dist/index.js",
   "scripts": {
-    "prepublish": "npm run build",
-    "build": "webpack --env dev && webpack --env build",
-    "dev": "webpack --progress --colors --watch --env dev",
-    "test": "mocha --require babel-core/register --colors ./test/*.spec.js",
-    "test:watch": "mocha --require babel-core/register --colors -w ./test/*.spec.js",
-    "release": "standard-version -r patch && git push --follow-tags && npm publish",
-    "postinstall": "node ./fetch && node ./create && npm run build"
+    "prepublishOnly": "yarn run build",
+    "build": "rollup -c",
+    "fetch": "node scripts/fetch",
+    "postfetch": "yarn run test",
+    "extract": "node scripts/extract",
+    "download": "yarn run fetch && yarn run extract",
+    "test": "mocha --colors ./test/*.spec.js",
+    "release": "release-it",
+    "postinstall": "yarn run download"
   },
   "repository": {
     "type": "git",
@@ -29,18 +33,11 @@
   },
   "homepage": "https://github.com/ekoeryanto/fa-list",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.0.3",
-    "babel-loader": "^7.1.2",
-    "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-preset-env": "^1.6.1",
-    "chai": "^4.1.2",
-    "eslint": "^4.13.1",
-    "eslint-loader": "^1.9.0",
+    "chai": "^4.2.0",
+    "eslint": "^5.6.1",
     "mocha": "^4.0.1",
-    "standard-version": "^4.3.0",
-    "webpack": "^3.10.0",
-    "yargs": "^10.0.3"
+    "release-it": "^7.6.1",
+    "rollup": "^0.66.5",
+    "rollup-plugin-json": "^3.1.0"
   }
 }

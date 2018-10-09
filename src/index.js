@@ -1,5 +1,3 @@
-import brands from './brands.json';
-import regular from './regular.json';
-import solid from './solid.json';
-
-export { brands, regular, solid };
+export { default as brands } from './brands';
+export { default as regular } from './regular';
+export { default as solid } from './solid';

@@ -1,19 +1,17 @@
-/* global describe, it, before */
-import chai from 'chai';
-import {solid, regular, brands} from '../lib/fa-list.js';
+/* global describe, it */
+const { expect } = require('chai');
+const icons = require('../data/icons.json')
 
-chai.expect();
+expect();
 
-const expect = chai.expect;
-
-describe('should be array', () => {
-  it('regular should be an array', () => {
-    expect(regular).to.be.an('array');
+describe('fetched icons', () => {
+  it('should be an object', () => {
+    expect(icons)
+      .to.be.an('object');
   });
-  it('brands should be an array', () => {
-    expect(brands).to.be.an('array');
-  });
-  it('solid should be an array', () => {
-    expect(solid).to.be.an('array');
+  it('values not empty', () => {
+    expect(Object.values(icons))
+      .to.be.an('array')
+      .that.is.not.empty
   });
 });
