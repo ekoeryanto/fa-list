@@ -31,5 +31,5 @@ node_modules
 .vscode
 
 .DS_Store
-data/
+data/*.json
 dist/
