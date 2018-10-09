@@ -1,0 +1,26 @@
+language: node_js
+cache: yarn
+node_js: '10'
+install: yarn install --pure-lockfile
+script: yarn build
+notifications:
+  email: false
+before_deploy:
+- openssl aes-256-cbc -K $encrypted_17e0da069064_key -iv $encrypted_17e0da069064_iv
+  -in deploy.key.enc -out deploy.key -d
+- chmod 600 deploy.key
+- eval `ssh-agent -s`
+- ssh-add deploy.key
+deploy:
+- provider: script
+  skip_cleanup: true
+  script: yarn release-it -n --preRelease=nightly
+- provider: npm
+  skip_cleanup: true
+  email: ekoeryanto@gmail.com
+  api_key:
+    secure: jges64r7bROWrZrvyKcstDoxs+D5NzYoJrOa7t0eKt6n4uyB/lFMOmMfA6mOAbFVyGEsSEXFPkbF/iTi53k2cAtqJVj1AxLOwIuuoTHysuj9zGpyaTtGPgFx2cFmJpym5JzVGJC8tWDR6bSZxykUSDCmjsttzdyluWJiXd06Wg+8OIDS1DZ6lvuNX6wFZn59uQldBQHrjjkrV29/NL/od/JeB4ueXlam/MMsS04c/kH/LA8oVvCrlJhjK97zznrsDdyS2wF14PD+QSJzpAHL7jWCxAk8wH+9yqpNXV9uggnezwfvBpME75MyEx8WCygAF29HYJTjzwN4FkxBqoWsO6F+QwY+FFUxNRLnU5n4hYMEbVhmIj9KwyxC2GVI7uNmFJNoqdb3TgyiEQXM/2EX6xUkdkn17qz+KoK4GcgTIP3iQQyR7l6GoMX4tjvIUyZG246a4OzQ7JH5INeggUhaNAycTxkja8GNY1gDx89il1YYmaoGHGPxKhkV9NxgDrkFUXWo26rmv7Tlmpft4EO5K5Rl373fA888mnpEhJB/sxsFjabb/Gjh4jeilGWLpbAPSHU+m+YAqV6JROjE7FowwQ6frE9DjzO18khr/6cLB2AFkteA7EfFzyEJ0m1V9RZ1ASG0GAtoZG1Iil1BBDhkzGxTmVVjdbx5xwZQG6XUOcQ=
+  tag: nightly
+env:
+  global:
+    secure: LBe9TRbFWGSmx5N97vsVCokIF3ck06NXw5Sag0DigLVaC+TYiughpaot0BNcER+922I7A0lcRm3SGr94YnF+ZC/k1ut4BTCFyPK4lBgGjz6ACLsO/Pi2r619yw0l8NYZg6GWcWpTU0gW2CX57nremlEzq7n2w/S5UHmktRO+2ECLvmijrxiYToPsSS3CzoEKg02lu0ibqxmyGM84aIJSI+setOe4Mk9hxGdQ2lhnAB74TVk6//CDaL7WHUyyIbgEAMEcWTxvAgNPcNwGDdMMPa4JkWwa/FILpXacu4jkwrHXGJzpO7Z/7255VYYuCTk1GRbo4B8MD5cWCrpH58Gl60pk7LeGtv75fMajCUH/uekspdPK2ZUK0TiNG05IcigVzbFpS3VCZCvgWwO04EAiYhQCfq3tGTnNYWTuwdxsQm2WAy03415tHk8C8/BSiGSrUy+ndpRm/J3i7tFSZHmh5EdRSM74zoOMzcvtCnu1u+qYsWdlH8qAnkEeW3euC95wdeb7aGb4CBG5zJ2+eHt1DeRgCm0L1HRSxb9nY4Z6/fcoF8Sq4GS7fzPE5erb/jiQUvqKQaB/3i8xnrv2dxXRhWj6JwwITgTw7FIiSL7HFLl+YM3+DERTMHG/hWREHiwM4O/ztVmsGJgOMqlZEReCqn3Z6amsh9gCOE+6/O/PHvQ=

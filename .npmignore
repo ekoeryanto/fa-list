@@ -4,3 +4,4 @@ yarn.lock
 rollup.config.js
 .release-it.json
 test/
+deploy.key

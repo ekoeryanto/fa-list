@@ -7,6 +7,7 @@
   "browser": "dist/index.js",
   "scripts": {
     "prepublishOnly": "yarn run build",
+    "prebuild": "yarn download",
     "build": "rollup -c",
     "fetch": "node scripts/fetch",
     "extract": "node scripts/extract",
