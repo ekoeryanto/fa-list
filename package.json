@@ -1,6 +1,6 @@
 {
   "name": "fa-list",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "List of fontawesome icons",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -34,6 +34,7 @@
   "homepage": "https://github.com/ekoeryanto/fa-list",
   "devDependencies": {
     "chai": "^4.2.0",
+    "conventional-changelog-cli": "^2.0.5",
     "eslint": "^5.6.1",
     "mocha": "^4.0.1",
     "release-it": "^7.6.1",
