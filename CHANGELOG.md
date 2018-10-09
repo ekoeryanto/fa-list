@@ -1,3 +1,23 @@
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/ekoeryanto/fa-list/compare/v1.0.2...v2.0.0) (2018-10-09)
+
+
+### Bug Fixes
+
+* conventional-changelog not found ([eedc44b](https://github.com/ekoeryanto/fa-list/commit/eedc44b))
+
+
+### Code Refactoring
+
+* change structure and build stuff ([004aaaa](https://github.com/ekoeryanto/fa-list/commit/004aaaa))
+
+
+### BREAKING CHANGES
+
+* dist file and folder renamed
+
+
+
 # Change Log
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
