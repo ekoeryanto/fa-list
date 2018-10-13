@@ -1,3 +1,8 @@
+<a name="2.1.0-nightly.6"></a>
+# [2.1.0-nightly.6](https://github.com/ekoeryanto/fa-list/compare/v2.1.0-nightly.5...v2.1.0-nightly.6) (2018-10-13)
+
+
+
 <a name="2.1.0-nightly.5"></a>
 # [2.1.0-nightly.5](https://github.com/ekoeryanto/fa-list/compare/v2.1.0-nightly.4...v2.1.0-nightly.5) (2018-10-12)
 
