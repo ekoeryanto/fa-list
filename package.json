@@ -1,6 +1,6 @@
 {
   "name": "fa-list",
-  "version": "2.1.0-nightly.50",
+  "version": "2.1.0-nightly.51",
   "description": "List of fontawesome icons",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
